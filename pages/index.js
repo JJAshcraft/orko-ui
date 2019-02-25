@@ -30,11 +30,21 @@ const Index = () => {
           <Header title="Home Page" />
           {isLoading && <strong>Loading...</strong>}
           {!isLoading &&
-            data.inventory.records.map(r => (
-              <div key={`product-${r.id}`}>
-                <strong>{r.fields['Product Name'][0]}</strong>
-              </div>
-            ))}
+            data.inventory.records.map(r => {
+              const [productName] = r.fields['Product Name'];
+              const [personnelId] = r.fields['Personnel'];
+              const personnel = data.personnel.records.find(
+                r => r.id === personnelId
+              );
+              const personnelName = personnel.fields['Name'];
+
+              return (
+                <div key={`product-${r.id}`}>
+                  <strong>{productName}</strong>
+                  <p>{personnelName}</p>
+                </div>
+              );
+            })}
         </>
       )}
     />
