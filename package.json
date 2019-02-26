@@ -20,12 +20,16 @@
   },
   "homepage": "https://github.com/echobind/orko-ui#readme",
   "dependencies": {
+    "@emotion/core": "^10.0.7",
+    "@emotion/styled": "^10.0.7",
     "next": "^8.0.1",
     "react": "^16.8.2",
     "react-dom": "^16.8.2"
   },
   "devDependencies": {
+    "dotenv": "^6.2.0",
     "eslint": "^5.14.1",
+    "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-react": "^7.12.4"
   }
 }

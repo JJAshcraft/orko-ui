@@ -1,17 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'next/link';
+import { Container, Navigation } from './styles';
 
-const linkStyle = {
-  marginRight: 15
-};
-
-export const Header = () => (
-  <div>
-    <Link href="/">
-      <a style={linkStyle}>Home</a>
-    </Link>
-    <Link href="/about">
-      <a style={linkStyle}>About</a>
-    </Link>
-  </div>
+export const Header = ({ title }) => (
+  <Container>
+    <h1>{title}</h1>
+    <Navigation>
+      <Link href="/">
+        <a>Home</a>
+      </Link>
+      <Link href="/about">
+        <a>About</a>
+      </Link>
+    </Navigation>
+  </Container>
 );
+
+Header.propTypes = {
+  title: PropTypes.string
+};
